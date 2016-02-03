@@ -19,28 +19,28 @@ class ParametrosGenerales
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $pmtId;
+    private $id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="PMT_CODIGO", type="string", length=20, nullable=false)
      */
-    private $pmtCodigo;
+    private $codigo;
 
     /**
      * @var string
      *
      * @ORM\Column(name="PMT_VALOR", type="string", length=250, nullable=false)
      */
-    private $pmtValor;
+    private $valor;
 
     /**
      * @var string
      *
      * @ORM\Column(name="PMT_DESCRIPCION", type="string", length=500, nullable=false)
      */
-    private $pmtDescripcion;
+    private $descripcion;
 
 
 }
