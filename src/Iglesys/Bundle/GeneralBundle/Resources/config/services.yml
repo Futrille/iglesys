@@ -1,0 +1,4 @@
+services:
+#    iglesys_general.example:
+#        class: Iglesys\Bundle\GeneralBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
