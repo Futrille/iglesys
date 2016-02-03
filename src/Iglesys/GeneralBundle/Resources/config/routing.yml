@@ -1,0 +1,3 @@
+iglesys_general_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: IglesysGeneralBundle:Default:index }
