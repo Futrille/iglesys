@@ -1,0 +1,30 @@
+parametrogeneral:
+    path:     /
+    defaults: { _controller: "IglesysGeneralBundle:ParametroGeneral:index" }
+
+parametrogeneral_show:
+    path:     /{id}/show
+    defaults: { _controller: "IglesysGeneralBundle:ParametroGeneral:show" }
+
+parametrogeneral_new:
+    path:     /new
+    defaults: { _controller: "IglesysGeneralBundle:ParametroGeneral:new" }
+
+parametrogeneral_create:
+    path:     /create
+    defaults: { _controller: "IglesysGeneralBundle:ParametroGeneral:create" }
+    methods:  POST
+
+parametrogeneral_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "IglesysGeneralBundle:ParametroGeneral:edit" }
+
+parametrogeneral_update:
+    path:     /{id}/update
+    defaults: { _controller: "IglesysGeneralBundle:ParametroGeneral:update" }
+    methods:  [POST, PUT]
+
+parametrogeneral_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "IglesysGeneralBundle:ParametroGeneral:delete" }
+    methods:  [POST, DELETE]

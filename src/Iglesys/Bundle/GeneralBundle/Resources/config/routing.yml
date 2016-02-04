@@ -1,3 +1,11 @@
+iglesys_general_valorvariable:
+    resource: "@IglesysGeneralBundle/Resources/config/routing/valorvariable.yml"
+    prefix:   /valorvariable
+
+iglesys_general_parametrogeneral:
+    resource: "@IglesysGeneralBundle/Resources/config/routing/parametrogeneral.yml"
+    prefix:   /parametrogeneral
+
 iglesys_general_homepage:
     path:     /hello/{name}
     defaults: { _controller: IglesysGeneralBundle:Default:index }
