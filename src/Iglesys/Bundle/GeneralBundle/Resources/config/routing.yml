@@ -1,7 +1,3 @@
-iglesys_general_pais:
-    resource: "@IglesysGeneralBundle/Resources/config/routing/pais.yml"
-    prefix:   /pais
-
 iglesys_general_valorvariable:
     resource: "@IglesysGeneralBundle/Resources/config/routing/valorvariable.yml"
     prefix:   /valorvariable
