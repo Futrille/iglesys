@@ -19,7 +19,8 @@ class DefaultController extends Controller
      */
     public function indexAction($name)
     {
-
+        $page = '';
+        if ()
         return $this->render('IglesysGeneralBundle:Default:index.html.php', array('name' => $name));
 //        $encoders = array(new XmlEncoder(), new JsonEncoder());
 //        $normalizers = array(new ObjectNormalizer());
