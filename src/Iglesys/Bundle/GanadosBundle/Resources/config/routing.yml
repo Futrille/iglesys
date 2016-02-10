@@ -1,20 +1,20 @@
 iglesys_ganados_index:
     path:     /ganados/
     defaults: { _controller: IglesysGanadosBundle:Default:index}
-    methods: [POST]
+    methods: [GET]
 
 iglesys_ganados_show:
-    path:     /ganados/{id}
+    path:     /ganados/{id}/
     defaults: { _controller: IglesysGanadosBundle:Default:show}
-    methods: [POST]
+    methods: [GET]
 
 iglesys_ganados_update:
-    path:     /ganados/{id}
+    path:     /ganados/{id}/
     defaults: { _controller: IglesysGanadosBundle:Default:update}
     methods: [PUT]
 
 iglesys_ganados_delete:
-    path:     /ganados/{id}
+    path:     /ganados/{id}/
     defaults: { _controller: IglesysGanadosBundle:Default:delete}
     methods: [DELETE]
 
