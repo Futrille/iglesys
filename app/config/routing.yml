@@ -1,3 +1,11 @@
+iglesys_index:
+    resource: "@IglesysIndexBundle/Resources/config/routing.yml"
+    prefix:   /
+
+iglesys_ganados:
+    resource: "@IglesysGanadosBundle/Resources/config/routing.yml"
+    prefix:   /
+
 iglesys_general:
     resource: "@IglesysGeneralBundle/Resources/config/routing.yml"
     prefix:   /

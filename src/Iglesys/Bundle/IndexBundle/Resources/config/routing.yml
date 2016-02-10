@@ -1,0 +1,3 @@
+iglesys_index:
+    path:     /index/
+    defaults: { _controller: IglesysIndexBundle:Default:index }
