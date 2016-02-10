@@ -1,0 +1,3 @@
+(
+    angular.module('iglesys', ['ngRoute'])
+);
