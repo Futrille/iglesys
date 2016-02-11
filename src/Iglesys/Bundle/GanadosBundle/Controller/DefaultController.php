@@ -22,9 +22,9 @@ class DefaultController extends Controller
         return $serializer->serialize($object, 'json');
     }
 
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        $key = $request->query->get('key',0);
+        //$key = $request->query->get('key',0);
 
         $vvaList = $this->getDoctrine()
             ->getRepository('IglesysGeneralBundle:ValorVariable')
@@ -35,14 +35,14 @@ class DefaultController extends Controller
         return $response;
     }
 
-    public function showAction($id)
+    public function createAction($q)
     {
         //$key = $request->query->get('key',0);
-        //$id = $request->request->get('id',0);
-        echo "ID:". $id;
+        echo "consulta:" . $q;
         $valorVariable = $this->getDoctrine()
             ->getRepository('IglesysGeneralBundle:ValorVariable')
-            ->find($id);
+            ->findAll();
+
         if (!$valorVariable) {
             throw $this->createNotFoundException('No se encuentra el registro solicitado.');
         }
@@ -52,15 +52,56 @@ class DefaultController extends Controller
         return $response;
     }
 
-    public function updateAction(Request $request)
+    public function showAction($id)
     {
-        $key = $request->request->get('key',0);
-        return $this->render('IglesysGanadosBundle:Default:index.html.php');
+        //$key = $request->query->get('key',0);
+        echo "id:" . $id;
+        $valorVariable = $this->getDoctrine()
+            ->getRepository('IglesysGeneralBundle:ValorVariable')
+            ->find($id);
+
+        if (!$valorVariable) {
+            throw $this->createNotFoundException('No se encuentra el registro solicitado.');
+        }
+
+        $response = new JsonResponse();
+        $response->setContent($this->getSerialize($valorVariable));
+        return $response;
     }
 
-    public function deleteAction(Request $request)
+    public function updateAction($id)
     {
-        $key = $request->request->get('key',0);
-        return $this->render('IglesysGanadosBundle:Default:index.html.php');
+        //$key = $request->query->get('key',0);
+        $request = Request::createFromGlobals();
+        echo $request->getContent() . "*";
+        //$variable = parse_str(file_get_contents('php://input', false , null, -1 , $_SERVER['CONTENT_LENGTH'] ), $_PUT);
+        //print_r($_SERVER);
+        $valorVariable = $this->getDoctrine()
+            ->getRepository('IglesysGeneralBundle:ValorVariable')
+            ->find($id);
+
+        if (!$valorVariable) {
+            throw $this->createNotFoundException('No se encuentra el registro solicitado.');
+        }
+
+        $response = new JsonResponse();
+        $response->setContent($this->getSerialize($valorVariable));
+        return $response;
+    }
+
+    public function deleteAction($id)
+    {
+        //$key = $request->query->get('key',0);
+        $valorVariable = $this->getDoctrine()
+            ->getRepository('IglesysGeneralBundle:ValorVariable')
+            ->find($id);
+
+        if (!$valorVariable) {
+            throw $this->createNotFoundException('No se encuentra el registro solicitado.');
+        }
+
+        $response = new JsonResponse();
+        $response->setContent($this->getSerialize($valorVariable));
+        return $response;
     }
 }
