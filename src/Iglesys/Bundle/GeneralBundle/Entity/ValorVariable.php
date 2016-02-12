@@ -5,7 +5,7 @@ namespace Iglesys\Bundle\GeneralBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * ValoresVariables
+ * ValorVariable
  *
  * @ORM\Table(name="valores_variables")
  * @ORM\Entity
