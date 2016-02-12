@@ -6,37 +6,28 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-use Symfony\Component\Serializer\Serializer;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
-
+use Iglesys\Bundle\GeneralBundle\IglesysGeneralBundle as Util;
 
 class DefaultController extends Controller
 {
-    public function getSerialize($object){
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
-        $normalizers = array(new ObjectNormalizer());
-
-        $serializer = new Serializer($normalizers, $encoders);
-        return $serializer->serialize($object, 'json');
-    }
+    private $util = null;
 
     public function indexAction()
     {
+        $util = new Util();
         //$key = $request->query->get('key',0);
-
         $vvaList = $this->getDoctrine()
             ->getRepository('IglesysGanadosBundle:Persona')
             ->findAll();
 
         $response = new JsonResponse();
-        $response->setContent($this->getSerialize($vvaList));
+        $response->setContent($util->getSerialize($vvaList));
         return $response;
     }
 
     public function createAction($q)
     {
+        $util = new Util();
         //$key = $request->query->get('key',0);
         echo "consulta:" . $q;
         $valorVariable = $this->getDoctrine()
@@ -48,12 +39,13 @@ class DefaultController extends Controller
         }
 
         $response = new JsonResponse();
-        $response->setContent($this->getSerialize($valorVariable));
+        $response->setContent($util->getSerialize($valorVariable));
         return $response;
     }
 
     public function showAction($id)
     {
+        $util = new Util();
         //$key = $request->query->get('key',0);
         echo "id:" . $id;
         $valorVariable = $this->getDoctrine()
@@ -65,12 +57,13 @@ class DefaultController extends Controller
         }
 
         $response = new JsonResponse();
-        $response->setContent($this->getSerialize($valorVariable));
+        $response->setContent($util->getSerialize($valorVariable));
         return $response;
     }
 
     public function updateAction($id)
     {
+        $util = new Util();
         //$key = $request->query->get('key',0);
         $request = Request::createFromGlobals();
         echo $request->getContent() . "*";
@@ -85,12 +78,13 @@ class DefaultController extends Controller
         }
 
         $response = new JsonResponse();
-        $response->setContent($this->getSerialize($valorVariable));
+        $response->setContent($util->getSerialize($valorVariable));
         return $response;
     }
 
     public function deleteAction($id)
     {
+        $util = new Util();
         //$key = $request->query->get('key',0);
         $valorVariable = $this->getDoctrine()
             ->getRepository('IglesysGeneralBundle:ValorVariable')
@@ -101,7 +95,7 @@ class DefaultController extends Controller
         }
 
         $response = new JsonResponse();
-        $response->setContent($this->getSerialize($valorVariable));
+        $response->setContent($util->getSerialize($valorVariable));
         return $response;
     }
 }

@@ -1,3 +1,3 @@
-iglesys_general:
-    path:     /general/
-    defaults: { _controller: IglesysGeneralBundle:Default:index }
+iglesys_general_valorvariable:
+    path:     /general/valorvariable/
+    defaults: { _controller: IglesysGeneralBundle:ValorVariable:index }
