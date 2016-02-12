@@ -55,17 +55,17 @@ class Telefono
      */
     private $vvaTipo;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Lideres", mappedBy="tlf")
-     */
-    private $lideres;
+//    /**
+//     * @var \Doctrine\Common\Collections\Collection
+//     *
+//     * @ORM\ManyToMany(targetEntity="Lideres", mappedBy="tlf")
+//     */
+//    private $lideres;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Persona", mappedBy="telefonos")
+     * @ORM\ManyToMany(targetEntity="\Iglesys\Bundle\GanadosBundle\Entity\Persona", mappedBy="telefonos")
      */
     private $personas;
 
@@ -74,7 +74,7 @@ class Telefono
      */
     public function __construct()
     {
-        $this->lideres = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->lideres = new \Doctrine\Common\Collections\ArrayCollection();
         $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -158,21 +158,21 @@ class Telefono
         $this->vvaTipo = $vvaTipo;
     }
 
-    /**
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getLideres()
-    {
-        return $this->lideres;
-    }
-
-    /**
-     * @param \Doctrine\Common\Collections\Collection $lideres
-     */
-    public function setLideres($lideres)
-    {
-        $this->lideres = $lideres;
-    }
+//    /**
+//     * @return \Doctrine\Common\Collections\Collection
+//     */
+//    public function getLideres()
+//    {
+//        return $this->lideres;
+//    }
+//
+//    /**
+//     * @param \Doctrine\Common\Collections\Collection $lideres
+//     */
+//    public function setLideres($lideres)
+//    {
+//        $this->lideres = $lideres;
+//    }
 
     /**
      * @return \Doctrine\Common\Collections\Collection

@@ -5,7 +5,7 @@ namespace Iglesys\Bundle\GeneralBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Iglesia
+ * Iglesias
  *
  * @ORM\Table(name="iglesias", indexes={@ORM\Index(name="fk_IGLESIAS_PAISES1_idx", columns={"PAI_ID"}), @ORM\Index(name="fk_IGLESIAS_VALORES_VARIABLES1_idx", columns={"VVA_IDESTATUS"})})
  * @ORM\Entity
@@ -75,6 +75,20 @@ class Iglesia
      * })
      */
     private $vvaEstatus;
+
+    /**
+     * @ORM\OneToMany(targetEntity="\Iglesys\Bundle\GanadosBundle\Entity\Persona", mappedBy="iglesia")
+     */
+    protected $personas;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * @return int

@@ -93,17 +93,17 @@ class Direccion
      */
     private $pais;
 
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
-     * @ORM\ManyToMany(targetEntity="Lideres", mappedBy="dir")
-     */
-    private $lideres;
+//    /**
+//     * @var \Doctrine\Common\Collections\Collection
+//     *
+//     * @ORM\ManyToMany(targetEntity="Lideres", mappedBy="dir")
+//     */
+//    private $lideres;
 
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Persona", mappedBy="direcciones")
+     * @ORM\ManyToMany(targetEntity="\Iglesys\Bundle\GanadosBundle\Entity\Persona", mappedBy="direcciones")
      */
     private $personas;
 
@@ -112,9 +112,186 @@ class Direccion
      */
     public function __construct()
     {
-        $this->lideres = new \Doctrine\Common\Collections\ArrayCollection();
+//        $this->lideres = new \Doctrine\Common\Collections\ArrayCollection();
         $this->personas = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrbanizacion()
+    {
+        return $this->urbanizacion;
+    }
+
+    /**
+     * @param string $urbanizacion
+     */
+    public function setUrbanizacion($urbanizacion)
+    {
+        $this->urbanizacion = $urbanizacion;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSector()
+    {
+        return $this->sector;
+    }
+
+    /**
+     * @param string $sector
+     */
+    public function setSector($sector)
+    {
+        $this->sector = $sector;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCalle()
+    {
+        return $this->calle;
+    }
+
+    /**
+     * @param string $calle
+     */
+    public function setCalle($calle)
+    {
+        $this->calle = $calle;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCasa()
+    {
+        return $this->casa;
+    }
+
+    /**
+     * @param string $casa
+     */
+    public function setCasa($casa)
+    {
+        $this->casa = $casa;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPiso()
+    {
+        return $this->piso;
+    }
+
+    /**
+     * @param string $piso
+     */
+    public function setPiso($piso)
+    {
+        $this->piso = $piso;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDireccion()
+    {
+        return $this->direccion;
+    }
+
+    /**
+     * @param string $direccion
+     */
+    public function setDireccion($direccion)
+    {
+        $this->direccion = $direccion;
+    }
+
+    /**
+     * @return Estado
+     */
+    public function getEstado()
+    {
+        return $this->estado;
+    }
+
+    /**
+     * @param Estado $estado
+     */
+    public function setEstado($estado)
+    {
+        $this->estado = $estado;
+    }
+
+    /**
+     * @return Municipio
+     */
+    public function getMunicipio()
+    {
+        return $this->municipio;
+    }
+
+    /**
+     * @param Municipio $municipio
+     */
+    public function setMunicipio($municipio)
+    {
+        $this->municipio = $municipio;
+    }
+
+    /**
+     * @return Pais
+     */
+    public function getPais()
+    {
+        return $this->pais;
+    }
+
+    /**
+     * @param Pais $pais
+     */
+    public function setPais($pais)
+    {
+        $this->pais = $pais;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPersonas()
+    {
+        return $this->personas;
+    }
+
+    /**
+     * @param \Doctrine\Common\Collections\Collection $personas
+     */
+    public function setPersonas($personas)
+    {
+        $this->personas = $personas;
+    }
+
 
 }
 

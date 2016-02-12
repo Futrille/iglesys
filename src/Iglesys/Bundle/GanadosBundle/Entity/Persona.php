@@ -74,26 +74,26 @@ class Persona
     private $apellidos;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="PER_SEXO", type="integer", nullable=false)
+     * @ORM\Column(name="PER_SEXO", type="string", nullable=false)
      */
     private $sexo;
 
     /**
-     * @var Iglesia
+     * @var \Iglesys\Bundle\GeneralBundle\Entity\Iglesia
      *
-     * @ORM\ManyToOne(targetEntity="Iglesia")
+     * @ORM\ManyToOne(targetEntity="\Iglesys\Bundle\GeneralBundle\Entity\Iglesia")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="IGL_ID", referencedColumnName="IGL_ID")
      * })
      */
-    private $iglesia;
+    private  $iglesia;
 
     /**
      * @var \Iglesys\Bundle\GeneralBundle\Entity\Pais
      *
-     * @ORM\ManyToOne(targetEntity="Pais")
+     * @ORM\ManyToOne(targetEntity="\Iglesys\Bundle\GeneralBundle\Entity\Pais")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="PAI_ID", referencedColumnName="PAI_ID")
      * })
@@ -103,7 +103,7 @@ class Persona
     /**
      * @var \Iglesys\Bundle\GeneralBundle\Entity\ValorVariable
      *
-     * @ORM\ManyToOne(targetEntity="ValorVariable")
+     * @ORM\ManyToOne(targetEntity="\Iglesys\Bundle\GeneralBundle\Entity\ValorVariable")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="VVA_IDESTATUS", referencedColumnName="VVA_ID")
      * })
@@ -113,7 +113,7 @@ class Persona
     /**
      * @var \Iglesys\Bundle\GeneralBundle\Entity\ValorVariable
      *
-     * @ORM\ManyToOne(targetEntity="ValorVariable")
+     * @ORM\ManyToOne(targetEntity="\Iglesys\Bundle\GeneralBundle\Entity\ValorVariable")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="VVA_IDESCOMPLETO", referencedColumnName="VVA_ID")
      * })
@@ -123,7 +123,7 @@ class Persona
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Direccion", inversedBy="personas")
+     * @ORM\ManyToMany(targetEntity="\Iglesys\Bundle\GeneralBundle\Entity\Direccion", inversedBy="personas")
      * @ORM\JoinTable(name="personas_has_direcciones",
      *   joinColumns={
      *     @ORM\JoinColumn(name="PER_ID", referencedColumnName="PER_ID")
@@ -138,7 +138,7 @@ class Persona
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Telefono", inversedBy="personas")
+     * @ORM\ManyToMany(targetEntity="\Iglesys\Bundle\GeneralBundle\Entity\Telefono", inversedBy="personas")
      * @ORM\JoinTable(name="personas_has_telefonos",
      *   joinColumns={
      *     @ORM\JoinColumn(name="PER_ID", referencedColumnName="PER_ID")
@@ -288,7 +288,7 @@ class Persona
     }
 
     /**
-     * @return int
+     * @return string
      */
     public function getSexo()
     {
@@ -296,7 +296,7 @@ class Persona
     }
 
     /**
-     * @param int $sexo
+     * @param string $sexo
      */
     public function setSexo($sexo)
     {

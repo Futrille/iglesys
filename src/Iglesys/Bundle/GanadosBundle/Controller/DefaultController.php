@@ -27,7 +27,7 @@ class DefaultController extends Controller
         //$key = $request->query->get('key',0);
 
         $vvaList = $this->getDoctrine()
-            ->getRepository('IglesysGeneralBundle:ValorVariable')
+            ->getRepository('IglesysGanadosBundle:Persona')
             ->findAll();
 
         $response = new JsonResponse();
